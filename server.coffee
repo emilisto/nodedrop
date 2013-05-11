@@ -19,7 +19,6 @@ handleRun = (code, callback) ->
     .get (error, result) ->
       callback result
 
-
 exports.startServer = (port, path, callback) ->
   app.use(express.static __dirname+'/public')
   app.get '/', (req, res) -> res.sendfile './public/index.html'

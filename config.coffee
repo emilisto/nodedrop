@@ -13,11 +13,6 @@ exports.config =
         before: [
           'vendor/scripts/console-polyfill.js',
           'vendor/scripts/jquery-1.9.1.js',
-          #'vendor/scripts/jquery-ui.js',
-
-          #'components/jquery-ui/ui/jquery-ui.js',
-          #'components/jquery-ui/ui/jquery.ui.resizable.js',
-
           'vendor/scripts/keymaster.min.js',
           'vendor/scripts/underscore-1.4.4.js',
           'vendor/scripts/backbone-1.0.0.js',
