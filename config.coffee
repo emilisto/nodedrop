@@ -13,7 +13,7 @@ exports.config =
         before: [
           'vendor/scripts/console-polyfill.js',
           'vendor/scripts/jquery-1.9.1.js',
-          'vendor/scripts/jquery-ui.js',
+          #'vendor/scripts/jquery-ui.js',
 
           #'components/jquery-ui/ui/jquery-ui.js',
           #'components/jquery-ui/ui/jquery.ui.resizable.js',
