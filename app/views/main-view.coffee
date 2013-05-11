@@ -16,9 +16,16 @@ module.exports = class MainView extends View
 
   _clickRun: =>
     code = @editor.getSession().getValue()
+
+    console.time 'run'
+
     @socket.emit 'run', code, ->
+
+      console.timeEnd 'run'
       console.log 'reply!'
       console.log arguments
+
+
 
   _initEditor: =>
     # FIXME: don't assume ace is a globally available

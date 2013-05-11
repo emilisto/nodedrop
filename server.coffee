@@ -7,9 +7,18 @@ app = express()
 server = require('http').createServer(app)
 
 handleRun = (code, callback) ->
-  console.log "received code to run: '#{code}'"
-  # TODO: enter code to run here
-  setTimeout (-> callback 'response-goes-here'), 500
+
+  # TODO: add loggng here, size of code, where it came from, execution time, you name it.
+
+  console.log "running code..."
+
+  # TODO: add timeout in case we don't get an answer
+
+  new Parsley.Command(code)
+    .dispatch()
+    .get (error, result) ->
+      callback result
+
 
 exports.startServer = (port, path, callback) ->
   app.use(express.static __dirname+'/public')
@@ -21,6 +30,6 @@ exports.startServer = (port, path, callback) ->
   io.set 'log level', 1
 
   io.sockets.on 'connection', (socket) ->
+    # TODO: add some logging, tell who logged in
     console.log 'new connection'
     socket.on 'run', handleRun
-
