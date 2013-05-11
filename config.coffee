@@ -14,7 +14,12 @@ exports.config =
           'vendor/scripts/console-polyfill.js',
           'vendor/scripts/jquery-1.9.1.js',
           'vendor/scripts/underscore-1.4.4.js',
-          'vendor/scripts/backbone-1.0.0.js'
+          'vendor/scripts/backbone-1.0.0.js',
+
+          'vendor/scripts/ace/ace.js'
+          'vendor/scripts/ace/mode-javascript.js'
+          'vendor/scripts/ace/theme-monokai.js'
+          'vendor/scripts/ace/worker-javascript.js'
         ]
         after: [
           'test/vendor/scripts/test-helper.js'
