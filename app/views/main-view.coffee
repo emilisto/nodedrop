@@ -10,7 +10,7 @@ module.exports = class MainView extends View
 
   initialize: =>
     super
-    @socket = io.connect 'http://localhost'
+    @socket = io.connect()
     _.extend this, new Backbone.Shortcuts
     @delegateShortcuts()
 
