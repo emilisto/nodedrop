@@ -14,8 +14,6 @@ module.exports = class MainView extends View
     _.extend this, new Backbone.Shortcuts
     @delegateShortcuts()
 
-    console.log this
-
   shortcuts:
     'ctrl+r': 'run'
 
