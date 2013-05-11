@@ -6,3 +6,107 @@
 // http://paulirish.com/2012/box-sizing-border-box-ftw/
 *
   box-sizing: border-box
+
+header-height = 100px
+
+header
+  background: #4a4a4a
+  width: 100%
+  position: fixed
+  height: header-height
+  top: 0px
+  left: 0px
+  right: 0px
+  text-align: center
+  z-index: 1000
+
+header img
+  margin-top: 30px
+
+.main
+  top: header-height
+
+#left
+  top: header-height
+
+  position: fixed
+  left: 0px
+  width: 80px
+  bottom: 0px
+  background-color: #90b36b
+  z-index: 200
+
+#left ul
+  width: 80px
+  list-style: none
+  margin: 0px
+  padding: 0px
+
+#left li
+  width: 80px
+  text-align: center
+  padding-top: 28px
+  padding-bottom: 5px
+
+#main
+  position: relative
+  background-color: #f0f0f0
+  margin-left: 90px
+  margin-right: 250px
+  width: auto
+  height: 4000px
+  margin-top: 198px
+
+#filemenu
+  top: header-height
+  background-color: #8a8a8a
+  position: fixed
+  left: 80px
+  right: 240px
+  height: 38px
+
+
+#filemenu img
+  padding-left: 13px
+  padding-top: 13px
+  margin-right: 13px
+  float: left
+
+#filemenu h3
+  margin: 0px
+  padding: 0px
+  color: #fff
+  font-weight: normal
+  padding-top: 5px
+
+
+#terminal
+  background-color: #2a2a2a
+  position: fixed
+  bottom: 0px
+  left: 80px
+  right: 240px
+  height: 80px
+  z-index: 150
+
+#terminal h2
+  text-align: center
+  color: #fff
+  letter-spacing: 0.1em
+
+#right
+  position: fixed
+  width: 240px
+  top: header-height
+  right: 0px
+  height: 100%
+  background-color: #ebece9
+
+#right .menu
+  width: 230px
+  height: 28px
+  background-color: #8a8a8a
+  padding-left: 10px
+  padding-top: 10px
+  color: #fff
+  border-left: 1px #b6b6b6 solid
