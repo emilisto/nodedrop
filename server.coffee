@@ -35,4 +35,11 @@ exports.startServer = (port, path, callback) ->
     socket.on 'run', handleRun
 
  unless module.parent
-   exports.startServer 3333, '.'
+
+   argv = require('optimist')
+    .default('port', 3333)
+    .argv
+
+   console.log "Starting server on #{argv.port} - make sure you've run `brunch build`"
+
+   exports.startServer argv.port, '.'
