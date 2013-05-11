@@ -1,5 +1,6 @@
 View = require 'views/base/view'
 template = require 'views/templates/main'
+TerminalView = require 'views/terminal-view'
 
 module.exports = class MainView extends View
   template: template
@@ -10,10 +11,10 @@ module.exports = class MainView extends View
   initialize: =>
     super
     @socket = io.connect 'http://localhost'
-    console.log 'cool'
-    console.log this
     _.extend this, new Backbone.Shortcuts
     @delegateShortcuts()
+
+    console.log this
 
   shortcuts:
     'ctrl+r': 'run'
@@ -25,14 +26,15 @@ module.exports = class MainView extends View
     code = @editor.getSession().getValue()
 
     console.time 'run'
-    @socket.emit 'run', code, ->
+    @socket.emit 'run', code, (result) =>
       console.timeEnd 'run'
       console.log 'reply!'
       console.log arguments
 
-
+      @terminalView.append result
 
   _initEditor: =>
+
     # FIXME: don't assume ace is a globally available
     # FIXME: right now, we've put the worker-javascript in the public
     # directory, since it wouldn't load any other way, despite being added to
@@ -50,5 +52,7 @@ module.exports = class MainView extends View
   render: =>
     super
     setTimeout @_initEditor
+    @terminalView = @subview 'terminal', new TerminalView container: @$('#terminal-container')
 
-
+    # FIXME: just for debug
+    window.terminalView = @terminalView
