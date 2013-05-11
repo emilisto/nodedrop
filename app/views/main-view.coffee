@@ -7,7 +7,20 @@ module.exports = class MainView extends View
   region: 'main'
   className: 'main'
 
-  _initEditor: ->
+  initialize: =>
+    super
+    @socket = io.connect 'http://localhost'
+
+  events:
+    'click .run': '_clickRun'
+
+  _clickRun: =>
+    code = @editor.getSession().getValue()
+    @socket.emit 'run', code, ->
+      console.log 'reply!'
+      console.log arguments
+
+  _initEditor: =>
     # FIXME: don't assume ace is a globally available
     # FIXME: right now, we've put the worker-javascript in the public
     # directory, since it wouldn't load any other way, despite being added to
@@ -20,8 +33,8 @@ module.exports = class MainView extends View
     # FIXME: use the ace Javscript validation to decide whether we send it to
     # the backend at all or not.
 
-  render: ->
+  render: =>
     super
-    setTimeout this._initEditor
+    setTimeout @_initEditor
 
 
