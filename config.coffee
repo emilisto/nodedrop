@@ -30,6 +30,10 @@ exports.config =
     templates:
       joinTo: 'javascripts/app.js'
 
+  plugins:
+    autoReload:
+      port: 1234
+
   server:
     path: 'server.coffee'
     port: 3333
