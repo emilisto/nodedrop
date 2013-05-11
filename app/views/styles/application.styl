@@ -12,7 +12,6 @@ header-height = 100px
 header
   background: #4a4a4a
   width: 100%
-  position: fixed
   height: header-height
   top: 0px
   left: 0px
@@ -21,35 +20,90 @@ header
   z-index: 1000
 
 header img
-  margin-top: 30px
+  margin-top: 20px
 
-.main
+width-left = 80px
+
+// Should be: 230px
+width-right = 0
+
+.left, .right, .middle
+  background-color: #aaa
   top: header-height
+  position: absolute
+  bottom: 0
+
+.left
+  background-color: #90b36b
+  width: width-left
+  left: 0
+
+  ul
+    list-style: none
+    margin: 0px
+    padding: 0px
+
+    li
+      text-align: center
+      padding-top: 28px
+      padding-bottom: 5px
+
+.right
+  width: width-right
+  right: 0
+
+.middle
+  left: width-left
+  right: width-right
+  background-color: #f0f0f0
+  overflow: hidden
+
+  .topbar
+    padding: 5px
+    color: #fff
+    background-color: #8a8a8a
+    height: 30px
+
+  .editor
+    padding: 30px
+    height: 100%
+
+  .terminal
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: #2a2a2a
+    height: 70px
+
+    h2
+      text-align: center
+      color: #fff
+      letter-spacing: 0.1em
+
 
 #left
   top: header-height
 
-  position: fixed
   left: 0px
   width: 80px
   bottom: 0px
   background-color: #90b36b
   z-index: 200
 
-#left ul
-  width: 80px
-  list-style: none
-  margin: 0px
-  padding: 0px
+  ul
+    width: 80px
+    list-style: none
+    margin: 0px
+    padding: 0px
 
-#left li
-  width: 80px
-  text-align: center
-  padding-top: 28px
-  padding-bottom: 5px
+    li
+      width: 80px
+      text-align: center
+      padding-top: 28px
+      padding-bottom: 5px
 
 #main
-  position: relative
   background-color: #f0f0f0
   margin-left: 90px
   margin-right: 250px
@@ -60,53 +114,49 @@ header img
 #filemenu
   top: header-height
   background-color: #8a8a8a
-  position: fixed
   left: 80px
   right: 240px
   height: 38px
 
+  img
+    padding-left: 13px
+    padding-top: 13px
+    margin-right: 13px
+    float: left
 
-#filemenu img
-  padding-left: 13px
-  padding-top: 13px
-  margin-right: 13px
-  float: left
-
-#filemenu h3
-  margin: 0px
-  padding: 0px
-  color: #fff
-  font-weight: normal
-  padding-top: 5px
+  h3
+    margin: 0px
+    padding: 0px
+    color: #fff
+    font-weight: normal
+    padding-top: 5px
 
 
 #terminal
   background-color: #2a2a2a
-  position: fixed
   bottom: 0px
   left: 80px
   right: 240px
   height: 80px
   z-index: 150
 
-#terminal h2
-  text-align: center
-  color: #fff
-  letter-spacing: 0.1em
+  h2
+    text-align: center
+    color: #fff
+    letter-spacing: 0.1em
 
 #right
-  position: fixed
   width: 240px
   top: header-height
   right: 0px
   height: 100%
   background-color: #ebece9
 
-#right .menu
-  width: 230px
-  height: 28px
-  background-color: #8a8a8a
-  padding-left: 10px
-  padding-top: 10px
-  color: #fff
-  border-left: 1px #b6b6b6 solid
+  .menu
+    width: 230px
+    height: 28px
+    background-color: #8a8a8a
+    padding-left: 10px
+    padding-top: 10px
+    color: #fff
+    border-left: 1px #b6b6b6 solid
