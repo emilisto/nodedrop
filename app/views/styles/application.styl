@@ -27,16 +27,25 @@ width-left = 80px
 // Should be: 230px
 width-right = 0
 
-.left, .right, .middle
+/* Main stylesheets */
+.left-menu, .main
   background-color: #aaa
   top: header-height
   position: absolute
   bottom: 0
 
-.left
-  background-color: #90b36b
+.main
+  left: width-left
+  right: width-right
+  overflow: hidden
+
+.left-menu
   width: width-left
   left: 0
+
+/* Widget: LeftMenu stylesheet */
+.left-menu
+  background-color: #90b36b
 
   ul
     list-style: none
@@ -48,15 +57,9 @@ width-right = 0
       padding-top: 28px
       padding-bottom: 5px
 
-.right
-  width: width-right
-  right: 0
-
-.middle
-  left: width-left
-  right: width-right
+/* Widget: Main stylesheet */
+.main
   background-color: #f0f0f0
-  overflow: hidden
 
   .topbar
     padding: 5px
@@ -80,83 +83,3 @@ width-right = 0
       text-align: center
       color: #fff
       letter-spacing: 0.1em
-
-
-#left
-  top: header-height
-
-  left: 0px
-  width: 80px
-  bottom: 0px
-  background-color: #90b36b
-  z-index: 200
-
-  ul
-    width: 80px
-    list-style: none
-    margin: 0px
-    padding: 0px
-
-    li
-      width: 80px
-      text-align: center
-      padding-top: 28px
-      padding-bottom: 5px
-
-#main
-  background-color: #f0f0f0
-  margin-left: 90px
-  margin-right: 250px
-  width: auto
-  height: 4000px
-  margin-top: 198px
-
-#filemenu
-  top: header-height
-  background-color: #8a8a8a
-  left: 80px
-  right: 240px
-  height: 38px
-
-  img
-    padding-left: 13px
-    padding-top: 13px
-    margin-right: 13px
-    float: left
-
-  h3
-    margin: 0px
-    padding: 0px
-    color: #fff
-    font-weight: normal
-    padding-top: 5px
-
-
-#terminal
-  background-color: #2a2a2a
-  bottom: 0px
-  left: 80px
-  right: 240px
-  height: 80px
-  z-index: 150
-
-  h2
-    text-align: center
-    color: #fff
-    letter-spacing: 0.1em
-
-#right
-  width: 240px
-  top: header-height
-  right: 0px
-  height: 100%
-  background-color: #ebece9
-
-  .menu
-    width: 230px
-    height: 28px
-    background-color: #8a8a8a
-    padding-left: 10px
-    padding-top: 10px
-    color: #fff
-    border-left: 1px #b6b6b6 solid
