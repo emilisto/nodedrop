@@ -13,6 +13,7 @@
     "test": "brunch test"
   },
   "dependencies": {
+    "parsley": "git://github.com/emilisto/parsley.git#master",
     "javascript-brunch": ">= 1.0 < 1.7",
     "coffee-script-brunch": ">= 1.0 < 1.7",
     "css-brunch": ">= 1.0 < 1.7",

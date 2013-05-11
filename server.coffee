@@ -1,5 +1,7 @@
 express = require 'express'
 socketio = require 'socket.io'
+Parsley = require 'parsley'
+CodeRunner = require 'parsley/contrib/coderunner'
 
 app = express()
 server = require('http').createServer(app)
