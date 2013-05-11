@@ -10,17 +10,22 @@ module.exports = class MainView extends View
   initialize: =>
     super
     @socket = io.connect 'http://localhost'
+    console.log 'cool'
+    console.log this
+    _.extend this, new Backbone.Shortcuts
+    @delegateShortcuts()
+
+  shortcuts:
+    'ctrl+r': 'run'
 
   events:
-    'click .run': '_clickRun'
+    'click .run': 'run'
 
-  _clickRun: =>
+  run: =>
     code = @editor.getSession().getValue()
 
     console.time 'run'
-
     @socket.emit 'run', code, ->
-
       console.timeEnd 'run'
       console.log 'reply!'
       console.log arguments
@@ -35,6 +40,8 @@ module.exports = class MainView extends View
 
     @editor = ace.edit "editor"
     @editor.setTheme "ace/theme/monokai"
+    @editor.commands.bindKeys { "ctrl-r": @run }
+
     @editor.getSession().setMode "ace/mode/javascript"
 
     # FIXME: use the ace Javscript validation to decide whether we send it to
