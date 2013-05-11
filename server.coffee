@@ -33,3 +33,6 @@ exports.startServer = (port, path, callback) ->
     # TODO: add some logging, tell who logged in
     console.log 'new connection'
     socket.on 'run', handleRun
+
+ unless module.parent
+   exports.startServer 3333, '.'
