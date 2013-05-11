@@ -6,8 +6,15 @@
 
 <!-- Widget: Editor -->
 <div id="editor">
-function fn(callback, arg) {
-  callback();
+function fn(callback) {
+
+  var request = require('request');
+  request('http://myhostname.net', {
+    'headers': { 'user-agent': 'curl' }
+  }, function (error, response, body) {
+    callback(null, body);
+  })
+
 }
 </div>
 
