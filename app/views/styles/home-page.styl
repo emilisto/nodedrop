@@ -1,3 +1,72 @@
 @import 'nib'
 
+.main
+  background-color: #f0f0f0
 
+  .topbar
+    padding: 5px
+    color: #fff
+    background-color: #8a8a8a
+    height: 30px
+
+    img, p, code
+      display: block
+      float: left
+      margin: 3px 5px
+      line-height: 12px
+
+    p
+      font-size: 14px
+
+    img
+      margin: 5px
+
+    code
+      font-size: 10px
+      color: #ccc
+
+  .run
+    cursor: pointer
+    letter-spacing: 0.1em
+
+  #editor
+    padding: 30px
+    height: 100%
+
+  .terminal
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 99999
+
+    height: 120px
+
+    font-size: 10px
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    color: #bbb
+    background-color: #2a2a2a
+
+    overflow: scroll
+
+    ul
+      list-style: none
+      margin: 0px
+      padding: 0px
+      padding-bottom: 10px
+
+      p, pre
+        float: left
+        margin: 0
+        padding-bottom: 10px
+      p
+        width: 40px
+        background-color: #2e2e2e
+        text-align: right
+        height: 100%
+
+      pre
+        padding-left: 5px
+      li
+        clear: both
+        padding-bottom: 5px

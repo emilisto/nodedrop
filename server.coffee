@@ -1,10 +1,7 @@
-express = require 'express'
+pushserve = require 'pushserve'
 socketio = require 'socket.io'
 Parsley = require 'parsley'
 CodeRunner = require 'parsley/contrib/coderunner'
-
-app = express()
-server = require('http').createServer(app)
 
 handleRun = (code, callback) ->
 
@@ -19,26 +16,26 @@ handleRun = (code, callback) ->
     .get (error, result) ->
       callback result
 
-exports.startServer = (port, path, callback) ->
-  app.use(express.static __dirname+'/public')
-  app.get '/', (req, res) -> res.sendfile './public/index.html'
+exports.startServer = (port, path='public', callback) ->
 
-  server = server.listen port
+  # brunch.io uses pushserve by default
+  server = pushserve
+    path: path
+    port: port
 
   io = socketio.listen(server)
   io.set 'log level', 1
-
   io.sockets.on 'connection', (socket) ->
     # TODO: add some logging, tell who logged in
     console.log 'new connection'
     socket.on 'run', handleRun
 
- unless module.parent
+unless module.parent
 
-   argv = require('optimist')
+  argv = require('optimist')
     .default('port', 3333)
     .argv
 
-   console.log "Starting server on #{argv.port} - make sure you've run `brunch build`"
+  console.log "Starting server on #{argv.port} - make sure you've run `brunch build`"
+  exports.startServer argv.port
 
-   exports.startServer argv.port, '.'
