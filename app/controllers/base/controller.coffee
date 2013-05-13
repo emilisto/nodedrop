@@ -8,4 +8,3 @@ module.exports = class Controller extends Chaplin.Controller
     '.*': ->
       @compose 'site', SiteView
       @compose 'leftmenu', LeftMenuView
-      @compose 'terminal', TerminalView
