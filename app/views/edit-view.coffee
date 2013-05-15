@@ -6,7 +6,7 @@ module.exports = class EditView extends View
   template: template
   autoRender: yes
   region: 'main'
-  className: 'main'
+  className: 'edit'
 
   initialize: =>
     super
@@ -43,6 +43,8 @@ module.exports = class EditView extends View
     @editor.commands.bindKeys { "ctrl-r": @run }
 
     @editor.getSession().setMode "ace/mode/javascript"
+
+    @trigger 'editor.initialized'
 
     # FIXME: use the ace Javscript validation to decide whether we send it to
     # the backend at all or not.
