@@ -1,6 +1,5 @@
 EditView = require 'views/edit-view'
 View = require 'views/base/view'
-template = require 'views/templates/about'
 
 message = "
 // \n
