@@ -26,7 +26,8 @@ message = "
 // set your mind to it. If you have any feedback on this service or just \n
 // want to say hi, tweet me @svammel. \n
 // \n
-// Cheers Emil \n
+// Cheers \n
+// Emil \n
 //  \n
 "
 
