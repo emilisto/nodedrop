@@ -1,8 +1,8 @@
 View = require 'views/base/view'
-template = require 'views/templates/home'
+template = require 'views/templates/edit'
 TerminalView = require 'views/terminal-view'
 
-module.exports = class HomeView extends View
+module.exports = class EditView extends View
   template: template
   autoRender: yes
   region: 'main'
