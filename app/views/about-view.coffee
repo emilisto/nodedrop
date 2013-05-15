@@ -19,12 +19,13 @@ message = "
 // \n
 // Every piece of nodejs you drop here will be analyzed for its dependencies, all \n
 // of which are installed in parallel through npm, and in the end it's executed in \n
-// a sort-of sandboxed environment. Thanks to redis being so awesome, \n
-//  \n
-// typical round-trip time is about 60ms. This service is in alpha, so you can \n
-// most definately crash it if you set your mind to it. If you have any feedback \n
-// on this service or just want to say hi, tweet me @svammel. \n
-//  \n
+// a sort-of sandboxed environment. Thanks to redis being so awesome, typical \n
+// around-trip time is about 60ms. \n
+// \n
+// This service is in alpha, so you can most definately crash it if you \n
+// set your mind to it. If you have any feedback on this service or just \n
+// want to say hi, tweet me @svammel. \n
+// \n
 // Cheers Emil \n
 //  \n
 "
